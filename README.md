@@ -38,6 +38,8 @@ Run the main script to start the training process and log the experiments with M
 To view the MLflow UI and the experiments:
 `mlflow ui`
 
+![MLflow UI](1.png)
+
 ## Purpose of Project
 
 ### Objective
