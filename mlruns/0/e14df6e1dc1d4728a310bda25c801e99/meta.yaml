@@ -1,0 +1,15 @@
+artifact_uri: file:///workspaces/ids706-week12-mlflow/mlruns/0/e14df6e1dc1d4728a310bda25c801e99/artifacts
+end_time: 1701031001891
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e14df6e1dc1d4728a310bda25c801e99
+run_name: whimsical-whale-52
+run_uuid: e14df6e1dc1d4728a310bda25c801e99
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701030999824
+status: 3
+tags: []
+user_id: vscode

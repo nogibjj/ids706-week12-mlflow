@@ -1,31 +1,60 @@
-# IDS706-python-template [![CI](https://github.com/nogibjj/IDS706-python-template/actions/workflows/ci.yml/badge.svg)](https://github.com/nogibjj/IDS706-python-template/actions/workflows/ci.yml)
+# IDS706-week12-mlflow [![CI](https://github.com/nogibjj/IDS706-week12-mlflow/actions/workflows/ci.yml/badge.svg)](https://github.com/nogibjj/IDS706-week12-mlflow/actions/workflows/ci.yml)
 
-Mini-project 1. 
+## Week 12: Use MLflow to Manage an ML Project
+### Requirements
+- Create a simple machine-learning model
+- Use MLflow to manage the project, including tracking metrics
+### Grading Criteria
+- Model functionality (20 points)
+- MLflow tracking (20 points)
+### Deliverables
+- MLflow project directory
+- Document or video demonstrating tracking with MLflow
 
-## Features
-- Environment Setup: Utilizes .devcontainer to set up a development environment in codespaces, ensuring consistent development environments across contributors.
-- Automated Workflow: Uses a Makefile to automate common tasks such as installation, testing, formatting, and linting.
-- Continuous Integration: Integrated with GitHub Actions to automate testing and other checks on push or pull request.
-- Base Libraries: Includes a foundational set of libraries for DevOps and web development, listed in requirements.txt.
+## Stock Price Prediction with MLflow Overview
 
-## Repository Structure
-- main.py: The main Python script of the project.
-- test_main.py: Tests associated with the main.py script.
-- .devcontainer: Configuration for setting up a development environment in codespaces.
-- .github: Configuration for GitHub Actions and other GitHub-related settings.
-- requirements.txt: Lists the Python libraries and their versions required for this project.
-- Makefile: Script to automate common tasks.
+This repository hosts the code for a machine learning project aimed at predicting stock prices. Utilizing MLflow, we efficiently manage our ML project lifecycle, including experiment tracking, model tuning, and metric logging.
 
-## Getting Started
+## Requirements
 
-1. Create a New Repository: Use this repository as a template to create a new repository.
-2. Clone the Repository: Clone the new repository to your local machine.
-3. Branching: Always create a new branch for your tasks or features.
-4. Development: Make the necessary changes or additions to the project.
-5. Commit and Push: Commit your changes and push them to the repository.
-6. Pull Requests: Create a pull request to merge your changes into the main branch.
-7. Code Review: Ensure your code is reviewed and all checks pass before merging.
-8. Clean-Up: After merging, delete the feature or task branch to keep the repository clean.
+- Python 3.8+
+- MLflow 1.0+
+- Pandas, NumPy, scikit-learn
+- Historical stock data
 
-## Contribution
-Contributions are welcome! Please ensure you follow the outlined process for development and adhere to best practices.
+## Setup
+
+To get started with this project, clone the repository and install the dependencies:
+
+```bash
+git clone https://github.com/nogibjj/IDS706-week12-mlflow.git
+cd IDS706-week12-mlflow
+pip install -r requirements.txt
+```
+
+## Usage
+Run the main script to start the training process and log the experiments with MLflow:  `python main.py`
+
+To view the MLflow UI and the experiments:
+`mlflow ui`
+
+## Purpose of Project
+
+### Objective
+
+The primary goal of this project is to develop a machine learning model capable of predicting future stock prices based on historical data. The model aims to identify patterns in stock movements and make informed predictions that could aid in investment decisions.
+
+### Data Format
+
+The dataset used consists of historical stock prices which include features like opening price, closing price, the highest price of the day, the lowest price of the day, and trading volume. Each entry is indexed by date, allowing for time-series analysis.
+
+### Steps
+
+The `main.py` script orchestrates the following process:
+1. Data Acquisition: It begins by loading historical stock data from the CSV files located in the `data/` directory.
+2. Preprocessing: The script then preprocesses this data to format it suitably for training, such as handling missing values, normalizing, and potentially feature engineering.
+3. Model Training: The data is split into training and testing sets, and a machine learning model (like a Random Forest Regressor) is trained on the historical data.
+4. MLflow Tracking: Throughout the process, MLflow is used to track the experiment, logging important parameters, metrics, and model artifacts.
+5. Prediction and Evaluation: Finally, the model is used to make predictions on the test set, and the performance is evaluated to understand the efficacy of the model.
+
+This automated workflow allows for robust experimentation and easy replication of results, with MLflow managing the lifecycle of machine learning experiments.

@@ -1,8 +1,10 @@
-from main import main
-def test_max():
-    """Function calling listMax"""
+import pandas as pd
+import os
+def test_main():
+    assert os.path.exists("data/stock_data.csv")
+    df = pd.read_csv("data/stock_data.csv")
+    assert df.shape[0] > 0
+    assert df.shape[1] > 0
 
-    list1 = [1, 2, 3, 4, 5, 6]
-    list2 = [1, 2, 3, 4]
-    assert main(list1) == 6
-    assert main(list2) == 4
+if __name__ == "__main__":
+    test_main()
